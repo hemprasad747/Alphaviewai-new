@@ -123,7 +123,7 @@
         });
         
         // Download buttons
-        const downloadButtons = document.querySelectorAll('#btn-download, #btn-download-2, #btn-download-windows');
+        const downloadButtons = document.querySelectorAll('#btn-download, #btn-download-2, #btn-download-windows, #btn-download-mac');
         downloadButtons.forEach(btn => {
             btn.addEventListener('click', handleDownload);
         });
