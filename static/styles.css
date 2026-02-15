@@ -601,26 +601,35 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-base);
-    max-width: 900px;
+    gap: var(--spacing-lg);
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .platform-badge {
-    padding: var(--spacing-base) var(--spacing-xl);
-    background-color: white;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: white;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-primary);
     transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
 }
 
 .platform-badge:hover {
     border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, white 100%);
+}
+
+.platform-badge svg {
+    color: var(--color-primary);
 }
 
 /* Features Grid */
