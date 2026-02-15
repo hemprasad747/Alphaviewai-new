@@ -323,7 +323,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <section class="testimonials-section" id="testimonials">
         <div class="container">
             <div class="section-header-center">
                 <span class="section-label">Testimonials</span>
@@ -331,171 +331,222 @@
                 <p class="section-subtitle">Real feedback from people who aced their interviews</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">bro this is literally undetectable. used it in my google interview last week and got the offer. worth every rupee 🔥</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">R</div>
-                        <div>
-                            <div class="author-name">Rahul M.</div>
-                            <div class="author-role">Software Engineer</div>
+            <div class="testimonials-scroll-wrapper">
+                <div class="testimonials-scroll-container">
+                    <!-- Row 1 -->
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1552380219-98d68b7e1064?w=100&h=100&fit=crop&crop=face" alt="Rahul M." class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Rahul M.</span>
+                                <span class="testimonial-handle">@rahul_dev</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">bro this is literally undetectable. used it in my google interview last week and got the offer. worth every rupee</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Software Engineer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">I was skeptical at first but wow... The AI answers are so natural and the transcription is instant. Used it for 3 interviews, landed 2 offers. My only regret is not finding this sooner!</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
-                        <div>
-                            <div class="author-name">Sarah Chen</div>
-                            <div class="author-role">Product Manager, Singapore</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1634552516330-ab1ccc0f605e?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Sarah Chen</span>
+                                <span class="testimonial-handle">@sarahchen_pm</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">I was skeptical at first but wow... The AI answers are so natural and the transcription is instant. Used it for 3 interviews, landed 2 offers!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Product Manager, Singapore</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">exam mode is crazy good. got 94% on my AWS certification without even studying properly lol</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">P</div>
-                        <div>
-                            <div class="author-name">Priya Sharma</div>
-                            <div class="author-role">DevOps Engineer</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?w=100&h=100&fit=crop&crop=face" alt="Priya Sharma" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Priya Sharma</span>
+                                <span class="testimonial-handle">@priya_devops</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">exam mode is crazy good. got 94% on my AWS certification without even studying properly lol</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">DevOps Engineer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">Game changer for coding interviews. The code suggestions are spot on and it explains everything clearly. Helped me crack Microsoft and Amazon rounds back to back.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div>
-                            <div class="author-name">Michael Rodriguez</div>
-                            <div class="author-role">Full Stack Developer, USA</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?w=100&h=100&fit=crop&crop=face" alt="Michael Rodriguez" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Michael Rodriguez</span>
+                                <span class="testimonial-handle">@mike_fullstack</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Game changer for coding interviews. The code suggestions are spot on. Helped me crack Microsoft and Amazon rounds back to back.</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Full Stack Developer, USA</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">as an international student this saved my job search. language barrier was killing me but alphaview helped with real time translations and perfect english answers. got offer from salesforce 🙏</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div>
-                            <div class="author-name">Arjun Patel</div>
-                            <div class="author-role">Data Analyst, Canada</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1769071167455-e5779ecc81a4?w=100&h=100&fit=crop&crop=face" alt="Arjun Patel" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Arjun Patel</span>
+                                <span class="testimonial-handle">@arjun_data</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">as an international student this saved my job search. language barrier was killing me but alphaview helped with real time translations. got offer from salesforce!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Data Analyst, Canada</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">Best investment ever. Clean interface, works flawlessly.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">K</div>
-                        <div>
-                            <div class="author-name">Kavya Reddy</div>
-                            <div class="author-role">UI/UX Designer</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1769636930016-5d9f0ca653aa?w=100&h=100&fit=crop&crop=face" alt="Kavya Reddy" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Kavya Reddy</span>
+                                <span class="testimonial-handle">@kavya_ux</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Best investment ever. Clean interface, works flawlessly. Highly recommend!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">UI/UX Designer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">Used this for my final round at Goldman Sachs. The behavioral question answers were incredible - sounded professional but still felt authentic. Interviewer never suspected a thing. Currently in my 3rd week on the job!</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
-                        <div>
-                            <div class="author-name">James Wilson</div>
-                            <div class="author-role">Financial Analyst, UK</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1770894807442-108cc33c0a7a?w=100&h=100&fit=crop&crop=face" alt="James Wilson" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">James Wilson</span>
+                                <span class="testimonial-handle">@james_finance</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Used this for my final round at Goldman Sachs. The behavioral question answers were incredible. Currently in my 3rd week on the job!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Financial Analyst, UK</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">privacy features are top notch. completely invisible in teams screen share. used professional plan for 4 interviews, still have minutes left over</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">V</div>
-                        <div>
-                            <div class="author-name">Vikram Singh</div>
-                            <div class="author-role">Backend Developer</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1763745315951-7daac4821af6?w=100&h=100&fit=crop&crop=face" alt="Vikram Singh" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Vikram Singh</span>
+                                <span class="testimonial-handle">@vikram_backend</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">privacy features are top notch. completely invisible in teams screen share. used professional plan for 4 interviews, still have minutes left over</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Backend Developer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">Support team is amazing! Had an issue during setup and they helped me via chat in under 5 minutes. The app itself is brilliant - got me through technical rounds I would've definitely failed otherwise.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">L</div>
-                        <div>
-                            <div class="author-name">Lisa Zhang</div>
-                            <div class="author-role">Frontend Engineer, Australia</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1554370510-99b2ff2fbd9e?w=100&h=100&fit=crop&crop=face" alt="Lisa Zhang" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Lisa Zhang</span>
+                                <span class="testimonial-handle">@lisa_frontend</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Support team is amazing! Had an issue during setup and they helped me in under 5 minutes. The app itself is brilliant!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Frontend Engineer, Australia</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">tbh I was nervous af but this made everything so easy. voice transcription is super fast and ai gives perfect answers. highly recommend for anyone doing remote interviews</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">N</div>
-                        <div>
-                            <div class="author-name">Neha Gupta</div>
-                            <div class="author-role">Marketing Manager</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1765005204058-10418f5123c5?w=100&h=100&fit=crop&crop=face" alt="Neha Gupta" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Neha Gupta</span>
+                                <span class="testimonial-handle">@neha_marketing</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">tbh I was nervous af but this made everything so easy. voice transcription is super fast and ai gives perfect answers</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Marketing Manager</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">Worth way more than what they're charging. Multi-language feature helped me with Japanese client interview. Absolutely seamless experience from start to finish.</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">D</div>
-                        <div>
-                            <div class="author-name">David Kim</div>
-                            <div class="author-role">Business Consultant, Korea</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1762522921456-cdfe882d36c3?w=100&h=100&fit=crop&crop=face" alt="David Kim" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">David Kim</span>
+                                <span class="testimonial-handle">@david_consulting</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Worth way more than what they're charging. Multi-language feature helped me with Japanese client interview. Seamless!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Business Consultant, Korea</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-                    <p class="testimonial-text">finally something that actually works!! no lag, no glitches. used it yesterday for tcs interview and nailed it 💯</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div>
-                            <div class="author-name">Anjali Verma</div>
-                            <div class="author-role">Fresh Graduate</div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1769636929130-56648d6e9c6d?w=100&h=100&fit=crop&crop=face" alt="Anjali Verma" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Anjali Verma</span>
+                                <span class="testimonial-handle">@anjali_2024</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">finally something that actually works!! no lag, no glitches. used it yesterday for tcs interview and nailed it</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Fresh Graduate</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
                         </div>
                     </div>
                 </div>
