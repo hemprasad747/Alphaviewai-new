@@ -171,11 +171,20 @@
     function handleDownload(e) {
         e.preventDefault();
         
-        const platform = state.selectedPlatform || 'windows';
+        // Detect platform from clicked button
+        let platform = state.selectedPlatform || 'windows';
+        const clickedButton = e.currentTarget;
+        
+        if (clickedButton.id === 'btn-download-mac' || clickedButton.classList.contains('download-btn-mac')) {
+            platform = 'mac';
+        } else if (clickedButton.id === 'btn-download-windows' || clickedButton.classList.contains('download-btn-windows')) {
+            platform = 'windows';
+        }
+        
         console.log(`Downloading for ${platform}...`);
         
         // Show download notification
-        showNotification('Download started! Check your downloads folder.', 'success');
+        showNotification(`Download started for ${platform === 'mac' ? 'macOS' : 'Windows'}! Check your downloads folder.`, 'success');
         
         // In production, trigger actual download
         // window.location.href = `/api/download/${platform}`;
