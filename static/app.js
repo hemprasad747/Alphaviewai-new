@@ -489,4 +489,32 @@
     } else {
         init();
     }
+    
+    // FAQ Accordion
+    setupFAQ();
+    
+    function setupFAQ() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isActive) {
+                    faqItem.classList.remove('active');
+                } else {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    }
 })();
