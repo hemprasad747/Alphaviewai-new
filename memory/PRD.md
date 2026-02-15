@@ -79,5 +79,5 @@ Build a modern, beautiful, accessible, mobile-first **static front-end** for the
 - Inline styles used for testimonial cards to override Tailwind CSS reset
 
 ## URLs
-- Preview: https://alphaview-ai.preview.emergentagent.com
-- API: https://alphaview-ai.preview.emergentagent.com/api/
+- Preview: https://interview-assistant-3.preview.emergentagent.com
+- API: https://interview-assistant-3.preview.emergentagent.com/api/
