@@ -246,7 +246,7 @@
                             </div>
                         </div>
                         
-                        <div class="step-flow-item locked">
+                        <div class="step-flow-item locked download-step">
                             <div class="step-badge-wrapper">
                                 <div class="step-flow-number">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -267,18 +267,91 @@
                                     <span class="step-status locked-status">Locked</span>
                                 </div>
                                 <p class="step-flow-description">Download the desktop app for your real interview with live AI assistance</p>
-                                <button id="btn-download-windows" class="btn btn-outline btn-small step-download" disabled>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M8 11l-4-4h2.5V3h3v4H12L8 11zM2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Download for Windows
-                                </button>
-                                <p id="btn-download-status" class="step-flow-help">
+                                
+                                <!-- Enhanced Download Card -->
+                                <div class="download-card">
+                                    <div class="download-card-header">
+                                        <div class="download-app-icon">
+                                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                <rect width="40" height="40" rx="10" fill="currentColor"/>
+                                                <path d="M20 10L28 22H12L20 10Z" fill="white"/>
+                                                <rect x="18" y="26" width="4" height="4" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="download-app-info">
+                                            <h4 class="download-app-name">AlphaView AI Desktop</h4>
+                                            <div class="download-app-meta">
+                                                <span class="download-version">v2.1.0</span>
+                                                <span class="download-meta-divider">•</span>
+                                                <span class="download-size">45 MB</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="download-features">
+                                        <div class="download-feature">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span>Real-time AI suggestions</span>
+                                        </div>
+                                        <div class="download-feature">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span>Screen overlay mode</span>
+                                        </div>
+                                        <div class="download-feature">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M13.5 4.5L6 12L2.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span>Invisible to screen share</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="download-buttons">
+                                        <button id="btn-download-windows" class="download-btn download-btn-windows" disabled>
+                                            <div class="download-btn-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M2 7h7V2L2 3v4zm8 0h8V2l-8 1.5V7zM2 18l7 1v-5H2v4zm8 1l8 1.5v-6.5h-8V19z" fill="currentColor"/>
+                                                </svg>
+                                            </div>
+                                            <div class="download-btn-text">
+                                                <span class="download-btn-label">Download for</span>
+                                                <span class="download-btn-platform">Windows</span>
+                                            </div>
+                                            <svg class="download-btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M8 3v7M4 7l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                        <button id="btn-download-mac" class="download-btn download-btn-mac" disabled>
+                                            <div class="download-btn-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M14.5 17c-.8 1.3-1.7 2.5-3.1 2.5s-1.7-.5-3.3-.5c-1.6 0-2 .5-3.3.5-1.4 0-2.4-1.4-3.2-2.7C.4 14.6-.2 11.8.7 9.8c.6-1.3 1.8-2.3 3.1-2.3 1.2 0 2 .6 3 .6s1.7-.6 3.1-.6c1.1 0 2.1.5 2.8 1.3-2.4 1.3-2 4.7.4 5.6-.3.8-.7 1.6-1.3 2.3l1.7.3zM12 6c-.2-1.5.4-3 1.2-4 .8-.9 2.1-1.6 3.2-1.7.1 1.3-.4 2.7-1.2 3.7-.8 1-2 1.7-3.2 2z" fill="currentColor"/>
+                                                </svg>
+                                            </div>
+                                            <div class="download-btn-text">
+                                                <span class="download-btn-label">Download for</span>
+                                                <span class="download-btn-platform">macOS</span>
+                                            </div>
+                                            <svg class="download-btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M8 3v7M4 7l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="download-requirements">
+                                        <span class="requirements-label">System requirements:</span>
+                                        <span class="requirements-text">Windows 10+ or macOS 11+, 4GB RAM</span>
+                                    </div>
+                                </div>
+                                
+                                <p id="btn-download-status" class="step-flow-help download-unlock-notice">
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                         <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/>
                                         <path d="M7 4v3M7 10h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                                     </svg>
-                                    Complete steps above to unlock
+                                    Complete steps above to unlock downloads
                                 </p>
                             </div>
                         </div>
