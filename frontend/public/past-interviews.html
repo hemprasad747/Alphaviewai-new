@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Interviews - AlphaView AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Left Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="currentColor"/>
+                        <path d="M16 8L22 20H10L16 8Z" fill="white"/>
+                        <rect x="14" y="22" width="4" height="4" fill="white"/>
+                    </svg>
+                    <span class="logo-text">AlphaView AI</span>
+                </a>
+                <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10h14M3 5h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="user-avatar-panel" class="user-panel">
+                <div class="user-avatar">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="20" fill="currentColor" opacity="0.1"/>
+                        <path d="M20 20a5 5 0 100-10 5 5 0 000 10zM12 30a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="user-info">
+                    <p id="user-email-panel" class="user-email">user@example.com</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="download.html" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M7 3v14M3 7h14M3 13h14" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Home
+                </a>
+                <a href="past-interviews.html" class="nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Past interviews
+                </a>
+                <a href="resumes.html" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12 2H6a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V6l-4-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 2v4h4M10 13H8M12 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    CVs / Resumes
+                </a>
+                <button class="nav-item nav-signout">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 17H4a2 2 0 01-2-2V5a2 2 0 012-2h3M13 13l4-4-4-4M17 9H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Sign out
+                </button>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main full-width">
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1 class="page-title">Past Interviews</h1>
+                    <p class="page-subtitle">Review your interview history and transcripts</p>
+                </div>
+                
+                <!-- Interviews Table -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Ends In</th>
+                                <th>AI Usage</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="past-interviews-tbody">
+                            <tr>
+                                <td colspan="6" class="empty-state">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                                        <path d="M24 16v12M24 32h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    <p>No interviews yet</p>
+                                    <p class="empty-state-help">Your past interview sessions will appear here</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Transcript Modal -->
+    <div id="transcript-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title">Interview Transcript</h2>
+                <button class="modal-close" aria-label="Close modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="transcript">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 3h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zM7 7h6M7 11h6M7 15h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Transcript
+                    </button>
+                    <button class="tab-btn" data-tab="ask-ai">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Ask AI
+                    </button>
+                </div>
+                
+                <div id="transcript-tab" class="tab-content active">
+                    <div class="transcript-actions">
+                        <button id="transcript-download-btn" class="btn btn-outline btn-small">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 10l-3-3h2V3h2v4h2l-3 3zM2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            Download Transcript
+                        </button>
+                    </div>
+                    <div class="transcript-content">
+                        <p class="transcript-placeholder">Transcript content will appear here...</p>
+                    </div>
+                </div>
+                
+                <div id="ask-ai-tab" class="tab-content">
+                    <div class="ask-ai-quick-actions">
+                        <p class="quick-actions-label">Quick questions:</p>
+                        <button class="quick-action-btn">Summarize this interview</button>
+                        <button class="quick-action-btn">What were my strengths?</button>
+                        <button class="quick-action-btn">Areas to improve</button>
+                    </div>
+                    
+                    <div class="ask-ai-custom">
+                        <label for="ask-ai-custom-prompt" class="form-label">Custom prompt:</label>
+                        <textarea 
+                            id="ask-ai-custom-prompt" 
+                            class="form-textarea" 
+                            rows="3" 
+                            placeholder="Ask anything about this interview..."
+                        ></textarea>
+                        <button id="ask-ai-submit-btn" class="btn btn-primary">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M14 2L7 9M14 2l-4 12-3-7-7-3 14-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Ask AI
+                        </button>
+                    </div>
+                    
+                    <div id="ask-ai-status" class="ai-status" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <p>AI is thinking...</p>
+                    </div>
+                    
+                    <div id="ask-ai-response" class="ai-response" style="display: none;">
+                        <div class="ai-response-header">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" fill="currentColor" opacity="0.1"/>
+                                <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>AI Response</span>
+                        </div>
+                        <div class="ai-response-content">
+                            <!-- Response will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Dialog -->
+    <div id="delete-confirm-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-dialog-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2 id="delete-dialog-title" class="modal-title">Delete Interview</h2>
+                <button class="modal-close" aria-label="Close dialog">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this interview? This action cannot be undone.</p>
+                <div class="dialog-actions">
+                    <button class="btn btn-ghost">Cancel</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

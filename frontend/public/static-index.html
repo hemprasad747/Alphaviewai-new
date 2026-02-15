@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaView AI - Your Real-Time AI Interview Assistant</title>
+    <meta name="description" content="Practice interviews, get AI-crafted answers, and analyze screens — live or on demand.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo" aria-label="AlphaView AI">
+                    <img src="https://customer-assets.emergentagent.com/job_alphaview-practice/artifacts/zvf8ets7_logo.png" alt="AlphaView AI" width="32" height="32" style="border-radius: 8px;">
+                    <span class="logo-text">AlphaView AI</span>
+                </a>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="main-nav">
+                    <a href="#features">Features</a>
+                    <a href="#platforms">Platforms</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="download.html">Download</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button id="btn-signin" class="btn btn-secondary">Sign in with Google</button>
+                    <div id="download-area" class="download-area" style="display: none;">
+                        <button id="btn-download" class="btn btn-primary">Download for Windows</button>
+                        <button id="btn-signout" class="btn btn-ghost">Sign out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-circle hero-circle-1"></div>
+            <div class="hero-circle hero-circle-2"></div>
+            <div class="hero-circle hero-circle-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="6" fill="currentColor"/>
+                        <circle cx="8" cy="8" r="3" fill="white"/>
+                    </svg>
+                    Built for Confident Interviews
+                </div>
+                
+                <h1 class="hero-title">
+                    Undetectable, Intelligent,
+                    <span class="hero-title-gradient">Always Ready</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    The most advanced AI interview assistant that remains invisible during screen sharing. 
+                    Get real-time transcription, AI-powered answers, and coding support without detection.
+                </p>
+                
+                <div id="hero-cta" class="cta-buttons">
+                    <button id="btn-signin-2" class="btn btn-primary btn-large btn-hero">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M19.6 10.227c0-.709-.064-1.39-.182-2.045H10v3.868h5.382a4.6 4.6 0 01-1.996 3.018v2.51h3.232c1.891-1.742 2.982-4.305 2.982-7.35z" fill="#4285F4"/>
+                            <path d="M10 20c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.04.955-3.386.955-2.605 0-4.81-1.76-5.595-4.123H1.064v2.59A9.996 9.996 0 0010 20z" fill="#34A853"/>
+                            <path d="M4.405 11.9c-.2-.6-.314-1.24-.314-1.9 0-.66.114-1.3.314-1.9V5.51H1.064A9.996 9.996 0 000 10c0 1.614.386 3.14 1.064 4.49l3.34-2.59z" fill="#FBBC05"/>
+                            <path d="M10 3.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C14.959.99 12.695 0 10 0 6.09 0 2.71 2.24 1.064 5.51l3.34 2.59C5.19 5.736 7.395 3.977 10 3.977z" fill="#EA4335"/>
+                        </svg>
+                        Download Desktop App
+                    </button>
+                    
+                    <div id="download-area-2" class="download-area" style="display: none;">
+                        <button id="btn-download-2" class="btn btn-primary btn-large">Download for Windows</button>
+                        <button id="btn-signout-2" class="btn btn-outline">Sign out</button>
+                    </div>
+                </div>
+                
+                <div class="hero-trust-badges">
+                    <div class="trust-badge">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 1L2 5v6c0 5 8 8 8 8s8-3 8-8V5l-8-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 9l2 2 4-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        100% Undetectable
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Real-Time AI
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M17 10c0 3.87-3.13 7-7 7m0 0c-3.87 0-7-3.13-7-7m7 7v-7m0 0L7 7m3 3l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Multi-Language
+                    </div>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="hero-feature-item">
+                        <div class="hero-feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9.88 9.88a3 3 0 104.24 4.24M12 2v4M2 12h4M18 12h4M12 18v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="hero-feature-title">Invisible in Screen Share</div>
+                            <div class="hero-feature-desc">Never appears in recordings</div>
+                        </div>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="hero-feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 2v4M16 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="hero-feature-title">Live Transcription</div>
+                            <div class="hero-feature-desc">Real-time voice to text</div>
+                        </div>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="hero-feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="hero-feature-title">AI-Powered Answers</div>
+                            <div class="hero-feature-desc">Context-aware suggestions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Platforms Section -->
+    <section class="supported-platforms-section" id="platforms">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Verified</span>
+                <h2 class="section-title">Privacy Demo Videos</h2>
+                <p class="section-subtitle">Click to watch proof that AlphaView AI is undetectable on each platform</p>
+            </div>
+            
+            <div class="platforms-verification-grid">
+                <div class="platform-verify-card" data-platform="zoom" onclick="openVideoModal('zoom')" data-testid="platform-zoom">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon zoom-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#2D8CFF"/>
+                            <path d="M15 13v14l12-7-12-7z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Zoom</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 2h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="teams" onclick="openVideoModal('teams')" data-testid="platform-teams">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon teams-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#5558AF"/>
+                            <text x="20" y="26" font-size="18" fill="white" text-anchor="middle" font-weight="bold">T</text>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Microsoft Teams</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 3h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="meet" onclick="openVideoModal('meet')" data-testid="platform-meet">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon meet-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#00897B"/>
+                            <circle cx="20" cy="20" r="8" fill="white"/>
+                            <circle cx="20" cy="20" r="4" fill="#00897B"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Google Meet</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 1h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="webex" onclick="openVideoModal('webex')" data-testid="platform-webex">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon webex-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#00BCF2"/>
+                            <path d="M12 20l8-6 8 6-8 6-8-6z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Webex</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 4h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="chime" onclick="openVideoModal('chime')" data-testid="platform-chime">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon chime-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#FF9900"/>
+                            <path d="M15 15h10v10H15z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Amazon Chime</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 2h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="coderpad" onclick="openVideoModal('coderpad')" data-testid="platform-coderpad">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon coderpad-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#E94E32"/>
+                            <text x="20" y="26" font-size="18" fill="white" text-anchor="middle" font-weight="bold">&lt;/&gt;</text>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>CoderPad.io</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 5h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="hackerrank" onclick="openVideoModal('hackerrank')" data-testid="platform-hackerrank">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon hackerrank-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#1BA94C"/>
+                            <path d="M20 12l6 8-6 8-6-8 6-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>HackerRank</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 3h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="discord" onclick="openVideoModal('discord')" data-testid="platform-discord">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon discord-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#5865F2"/>
+                            <path d="M16 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm6 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Discord</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 1h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="lark" onclick="openVideoModal('lark')" data-testid="platform-lark">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon lark-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#00D6B9"/>
+                            <circle cx="20" cy="18" r="5" fill="white"/>
+                            <path d="M15 25h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Lark/Feishu</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 6h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="slack" onclick="openVideoModal('slack')" data-testid="platform-slack">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon slack-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#4A154B"/>
+                            <rect x="15" y="12" width="4" height="10" rx="2" fill="#E01E5A"/>
+                            <rect x="21" y="18" width="4" height="10" rx="2" fill="#36C5F0"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Slack Huddles</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 2h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal" data-testid="video-modal">
+        <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal()" data-testid="video-modal-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="video-modal-header">
+                <h3 id="videoModalTitle">Platform Demo</h3>
+                <p id="videoModalSubtitle">Proof of undetectability</p>
+            </div>
+            <div class="video-container" id="videoContainer">
+                <div class="video-placeholder">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+                        <path d="M32 24v32l24-16-24-16z" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    <p>Video demo coming soon</p>
+                    <span>Upload your demo video to showcase AlphaView AI on this platform</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What our users say</h2>
+                <p class="section-subtitle">Real feedback from people who aced their interviews</p>
+            </div>
+            
+            <div class="testimonials-scroll-wrapper">
+                <div class="testimonials-scroll-container">
+                    <!-- Row 1 -->
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1552380219-98d68b7e1064?w=100&h=100&fit=crop&crop=face" alt="Rahul M." class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Rahul M.</span>
+                                <span class="testimonial-handle">@rahul_dev</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">bro this is literally undetectable. used it in my google interview last week and got the offer. worth every rupee</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Software Engineer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1634552516330-ab1ccc0f605e?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Sarah Chen</span>
+                                <span class="testimonial-handle">@sarahchen_pm</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">I was skeptical at first but wow... The AI answers are so natural and the transcription is instant. Used it for 3 interviews, landed 2 offers!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Product Manager, Singapore</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1628619487925-e9b8fc4c6b08?w=100&h=100&fit=crop&crop=face" alt="Priya Sharma" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Priya Sharma</span>
+                                <span class="testimonial-handle">@priya_devops</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">exam mode is crazy good. got 94% on my AWS certification without even studying properly lol</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">DevOps Engineer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?w=100&h=100&fit=crop&crop=face" alt="Michael Rodriguez" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Michael Rodriguez</span>
+                                <span class="testimonial-handle">@mike_fullstack</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Game changer for coding interviews. The code suggestions are spot on. Helped me crack Microsoft and Amazon rounds back to back.</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Full Stack Developer, USA</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1769071167455-e5779ecc81a4?w=100&h=100&fit=crop&crop=face" alt="Arjun Patel" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Arjun Patel</span>
+                                <span class="testimonial-handle">@arjun_data</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">as an international student this saved my job search. language barrier was killing me but alphaview helped with real time translations. got offer from salesforce!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Data Analyst, Canada</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1769636930016-5d9f0ca653aa?w=100&h=100&fit=crop&crop=face" alt="Kavya Reddy" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Kavya Reddy</span>
+                                <span class="testimonial-handle">@kavya_ux</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Best investment ever. Clean interface, works flawlessly. Highly recommend!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">UI/UX Designer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1770894807442-108cc33c0a7a?w=100&h=100&fit=crop&crop=face" alt="James Wilson" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">James Wilson</span>
+                                <span class="testimonial-handle">@james_finance</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Used this for my final round at Goldman Sachs. The behavioral question answers were incredible. Currently in my 3rd week on the job!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Financial Analyst, UK</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1763745315951-7daac4821af6?w=100&h=100&fit=crop&crop=face" alt="Vikram Singh" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Vikram Singh</span>
+                                <span class="testimonial-handle">@vikram_backend</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">privacy features are top notch. completely invisible in teams screen share. used professional plan for 4 interviews, still have minutes left over</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Backend Developer</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1554370510-99b2ff2fbd9e?w=100&h=100&fit=crop&crop=face" alt="Lisa Zhang" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Lisa Zhang</span>
+                                <span class="testimonial-handle">@lisa_frontend</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Support team is amazing! Had an issue during setup and they helped me in under 5 minutes. The app itself is brilliant!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Frontend Engineer, Australia</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1765005204058-10418f5123c5?w=100&h=100&fit=crop&crop=face" alt="Neha Gupta" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Neha Gupta</span>
+                                <span class="testimonial-handle">@neha_marketing</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">tbh I was nervous af but this made everything so easy. voice transcription is super fast and ai gives perfect answers</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Marketing Manager</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1762522921456-cdfe882d36c3?w=100&h=100&fit=crop&crop=face" alt="David Kim" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">David Kim</span>
+                                <span class="testimonial-handle">@david_consulting</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">Worth way more than what they're charging. Multi-language feature helped me with Japanese client interview. Seamless!</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Business Consultant, Korea</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card-social">
+                        <div class="testimonial-header">
+                            <img src="https://images.unsplash.com/photo-1769636929130-56648d6e9c6d?w=100&h=100&fit=crop&crop=face" alt="Anjali Verma" class="testimonial-avatar">
+                            <div class="testimonial-user-info">
+                                <span class="testimonial-name">Anjali Verma</span>
+                                <span class="testimonial-handle">@anjali_2024</span>
+                            </div>
+                            <div class="testimonial-verified">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#10b981"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">finally something that actually works!! no lag, no glitches. used it yesterday for tcs interview and nailed it</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-role">Fresh Graduate</span>
+                            <span class="testimonial-stars">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Core Features</span>
+                <h2 class="section-title">Undetectable & Intelligent</h2>
+                <p class="section-subtitle">Advanced technology designed to remain completely invisible while providing real-time assistance</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card feature-card-highlight">
+                    <div class="feature-icon feature-icon-primary">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M9.88 9.88a3 3 0 104.24 4.24M14 4v4M4 14h4M20 14h4M14 20v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Undetectable in Screen Share</h3>
+                    <p class="feature-description">Does not appear in screen sharing or recording – keeps your interview view clean and professional without any visible traces.</p>
+                    <div class="feature-badge">Stealth Mode</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-secondary">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 10h20M10 4v20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Stealth in Task Manager</h3>
+                    <p class="feature-description">Runs discreetly without obvious identification in Task Manager. No suspicious process names or high resource usage.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-accent">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M14 4v8M14 12l-4-2M14 12l4-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Live Voice Transcription</h3>
+                    <p class="feature-description">Captures interviewer audio and converts it to text in real time. Perfect for understanding complex questions quickly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-success">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">AI-Generated Answers</h3>
+                    <p class="feature-description">Contextual, role-specific suggestions using advanced language models. Get perfect answers tailored to your position and industry.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-warning">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M8 8h12M8 14h12M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Coding Interview Support</h3>
+                    <p class="feature-description">Converts English to code, assists with logic, explanations, and solutions. Perfect for technical interviews and coding challenges.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-info">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 10v8M10 14h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-Language Support</h3>
+                    <p class="feature-description">English, Spanish, Hindi, and virtually all major languages for global interviews. No language barrier holds you back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exam Support Section -->
+    <section class="exam-support-section">
+        <div class="container">
+            <div class="exam-support-content">
+                <div class="exam-support-visual">
+                    <div class="exam-icon-wrapper">
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                            <circle cx="60" cy="60" r="55" stroke="currentColor" stroke-width="3" opacity="0.1"/>
+                            <circle cx="60" cy="60" r="40" stroke="currentColor" stroke-width="3" opacity="0.2"/>
+                            <circle cx="60" cy="60" r="25" fill="currentColor" opacity="0.8"/>
+                            <path d="M52 60l6 6 10-12" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="exam-support-text">
+                    <span class="section-label">Exam Mode</span>
+                    <h2 class="section-title-left">Automatic Answer Detection</h2>
+                    <p class="exam-description">
+                        Our advanced AI can detect exam questions automatically and provide the right option to choose. 
+                        Select correct answers instantly with intelligent pattern recognition and answer validation.
+                    </p>
+                    <div class="exam-features-list">
+                        <div class="exam-feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div>
+                                <strong>Auto-Detection:</strong> Automatically identifies exam questions
+                            </div>
+                        </div>
+                        <div class="exam-feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div>
+                                <strong>Smart Selection:</strong> Highlights the correct answer option
+                            </div>
+                        </div>
+                        <div class="exam-feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div>
+                                <strong>Instant Results:</strong> Real-time answer validation and confidence scoring
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2v8M10 10l-3-3M10 10l3-3M2 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Get Started with Exam Mode
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-subtitle">Limited time offer – Get up to 50% off on all plans</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <p class="pricing-subtitle">Perfect for quick interviews</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-original">₹1,199</span>
+                        <div class="price-current">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">599</span>
+                        </div>
+                        <span class="price-save">Save 50%</span>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>180 minutes</strong> of AI assistance</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Undetectable screen sharing</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Live voice transcription</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>AI-generated answers</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Coding interview support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Exam mode with auto-detection</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Multi-language support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Email support</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-large pricing-cta">Get Started</button>
+                </div>
+                
+                <!-- Professional Plan (Most Popular) -->
+                <div class="pricing-card pricing-card-popular">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Professional</h3>
+                        <p class="pricing-subtitle">Best for serious candidates</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-original">₹2,199</span>
+                        <div class="price-current">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">1,099</span>
+                        </div>
+                        <span class="price-save">Save 50%</span>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>380 minutes</strong> of AI assistance</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Undetectable screen sharing</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Live voice transcription</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>AI-generated answers</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Coding interview support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Exam mode with auto-detection</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Multi-language support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Priority support</strong></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large pricing-cta">Get Started</button>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <p class="pricing-subtitle">For multiple interviews</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-original">₹4,199</span>
+                        <div class="price-current">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">2,099</span>
+                        </div>
+                        <span class="price-save">Save 50%</span>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>640 minutes</strong> of AI assistance</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Undetectable screen sharing</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Live voice transcription</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>AI-generated answers</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Coding interview support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Exam mode with auto-detection</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Multi-language support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.1"/>
+                                <path d="M6 10l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>24/7 Priority support</strong></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-large pricing-cta">Get Started</button>
+                </div>
+            </div>
+            
+            <div class="pricing-guarantee">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                    <path d="M24 4L8 12v12c0 10 16 16 16 16s16-6 16-16V12L24 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div>
+                    <h4>30-Day Money-Back Guarantee</h4>
+                    <p>Not satisfied? Get a full refund within 30 days. No questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about AlphaView AI</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="1">
+                        <span>Is AlphaView AI really undetectable during screen sharing?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, absolutely. AlphaView AI is designed with advanced stealth technology that makes it completely invisible during screen sharing and recording. It doesn't appear in:</p>
+                        <ul>
+                            <li>Screen sharing sessions (Zoom, Teams, Meet, etc.)</li>
+                            <li>Screen recordings</li>
+                            <li>Task Manager (runs discreetly)</li>
+                            <li>Process monitors</li>
+                        </ul>
+                        <p>Our users have successfully used it in thousands of interviews without detection.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="2">
+                        <span>What platforms does AlphaView AI work with?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>AlphaView AI works seamlessly with all major video conferencing and interview platforms:</p>
+                        <ul>
+                            <li>Zoom</li>
+                            <li>Google Meet</li>
+                            <li>Microsoft Teams</li>
+                            <li>Webex</li>
+                            <li>Amazon Chime</li>
+                            <li>Any browser-based interview platform</li>
+                        </ul>
+                        <p>It also supports various exam platforms and coding interview environments.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="3">
+                        <span>Do I need technical skills to use AlphaView AI?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! AlphaView AI is designed for everyone, regardless of technical expertise:</p>
+                        <ul>
+                            <li><strong>Simple Installation:</strong> One-click download and setup</li>
+                            <li><strong>Auto-Configuration:</strong> Works out of the box</li>
+                            <li><strong>Intuitive Interface:</strong> Easy-to-use controls</li>
+                            <li><strong>Guided Setup:</strong> Step-by-step instructions</li>
+                        </ul>
+                        <p>If you can use Zoom, you can use AlphaView AI. It's that simple!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="4">
+                        <span>Is my data secure and private?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your privacy and security are our top priorities:</p>
+                        <ul>
+                            <li><strong>End-to-End Encryption:</strong> All data is encrypted</li>
+                            <li><strong>No Logging:</strong> We don't store your interview content</li>
+                            <li><strong>Local Processing:</strong> Most AI processing happens on your device</li>
+                            <li><strong>No Data Sharing:</strong> We never sell or share your data</li>
+                            <li><strong>GDPR Compliant:</strong> Meets international privacy standards</li>
+                        </ul>
+                        <p>You're in complete control of your data at all times.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="5">
+                        <span>Can I get caught using AlphaView AI?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>AlphaView AI is designed with multiple layers of stealth technology to remain completely undetectable:</p>
+                        <ul>
+                            <li><strong>Screen Share Safe:</strong> Invisible in all screen sharing modes</li>
+                            <li><strong>No Process Traces:</strong> Runs discreetly without obvious identification</li>
+                            <li><strong>No Screen Overlays:</strong> Doesn't draw anything on your screen</li>
+                            <li><strong>Natural Responses:</strong> AI generates human-like answers</li>
+                        </ul>
+                        <p>However, we recommend using it responsibly and being aware of your organization's policies. The tool is designed for practice and preparation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="6">
+                        <span>What languages does AlphaView AI support?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>AlphaView AI supports a wide range of languages for both transcription and AI responses:</p>
+                        <ul>
+                            <li>English (US, UK, Australian, Canadian)</li>
+                            <li>Spanish (Spain, Latin America)</li>
+                            <li>Hindi</li>
+                            <li>French</li>
+                            <li>German</li>
+                            <li>Mandarin Chinese</li>
+                            <li>Japanese</li>
+                            <li>Korean</li>
+                            <li>And 40+ more languages</li>
+                        </ul>
+                        <p>You can switch languages instantly during your interview session.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="7">
+                        <span>How does the exam mode work?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Exam mode uses advanced AI to help with multiple-choice exams:</p>
+                        <ul>
+                            <li><strong>Auto-Detection:</strong> Recognizes exam questions automatically</li>
+                            <li><strong>Smart Analysis:</strong> Analyzes all answer options</li>
+                            <li><strong>Answer Highlighting:</strong> Indicates the most likely correct answer</li>
+                            <li><strong>Confidence Score:</strong> Shows reliability percentage</li>
+                            <li><strong>Instant Processing:</strong> Works in real-time as questions appear</li>
+                        </ul>
+                        <p>Perfect for certification exams, online tests, and assessment platforms.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" data-faq="8">
+                        <span>What if I run out of minutes?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You have several options if you run out of minutes:</p>
+                        <ul>
+                            <li><strong>Top Up:</strong> Purchase additional minutes at any time</li>
+                            <li><strong>Upgrade Plan:</strong> Move to a higher tier for better value</li>
+                            <li><strong>Auto-Renewal:</strong> Enable automatic top-ups (optional)</li>
+                        </ul>
+                        <p>Your unused minutes never expire and carry over indefinitely. You can also pause and resume interviews to conserve time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" class="privacy-section">
+        <div class="container">
+            <div class="privacy-content">
+                <div class="privacy-text">
+                    <h2 class="section-title">Your privacy is our priority</h2>
+                    <ul class="privacy-checklist">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            End-to-end encryption for all sessions
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            No data sold to third parties
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            You control what gets saved
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            GDPR and CCPA compliant
+                        </li>
+                    </ul>
+                </div>
+                <div class="privacy-visual">
+                    <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
+                        <circle cx="150" cy="150" r="120" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                        <circle cx="150" cy="150" r="90" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                        <circle cx="150" cy="150" r="60" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                        <path d="M150 90v-30M150 240v30M90 150H60M240 150h30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="120" y="120" width="60" height="70" rx="4" fill="currentColor" opacity="0.8"/>
+                        <path d="M150 105a15 15 0 0115 15v5h-30v-5a15 15 0 0115-15z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="150" cy="155" r="8" fill="white"/>
+                        <rect x="147" y="160" width="6" height="15" rx="3" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-label">Getting Started</span>
+                <h2 class="section-title">How it works</h2>
+                <p class="section-subtitle">Get started in three simple steps</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card step-card-1">
+                    <div class="step-number-large">1</div>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 12v16M12 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Start a session</h3>
+                    <p class="step-description">Choose your preferred language and AI model. Set up your interview environment in seconds.</p>
+                    <div class="step-features">
+                        <div class="step-feature">✓ Multiple AI models</div>
+                        <div class="step-feature">✓ Language selection</div>
+                        <div class="step-feature">✓ Quick setup</div>
+                    </div>
+                </div>
+                
+                <div class="step-card step-card-2">
+                    <div class="step-number-large">2</div>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 6v28M6 20h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Speak or type your question</h3>
+                    <p class="step-description">Ask anything during your practice session. The AI listens to both you and the interviewer.</p>
+                    <div class="step-features">
+                        <div class="step-feature">✓ Voice input</div>
+                        <div class="step-feature">✓ Text input</div>
+                        <div class="step-feature">✓ Context aware</div>
+                    </div>
+                </div>
+                
+                <div class="step-card step-card-3">
+                    <div class="step-number-large">3</div>
+                    <div class="step-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Get instant answers</h3>
+                    <p class="step-description">Click Ask AI to receive a streamed, candidate-style answer. The AI uses the last 7 Q&A pairs for context.</p>
+                    <div class="step-features">
+                        <div class="step-feature">✓ Real-time streaming</div>
+                        <div class="step-feature">✓ Contextual memory</div>
+                        <div class="step-feature">✓ Natural responses</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M16 8L22 20H10L16 8Z" fill="white"/>
+                            <rect x="14" y="22" width="4" height="4" fill="white"/>
+                        </svg>
+                        <span class="logo-text">AlphaView AI</span>
+                    </div>
+                    <p class="footer-tagline">Your Real‑Time AI Interview Assistant</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                    <a href="download.html">Download the app</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 AlphaView AI. All rights reserved.</p>
+                <p class="footer-help">Need help? Visit our <a href="#">Help Center</a> or contact <a href="mailto:support@alphaviewai.com">support@alphaviewai.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="container">
+            <p>We use cookies to improve your experience. <a href="#">Learn more</a></p>
+            <div class="cookie-actions">
+                <button class="btn btn-ghost btn-small" id="cookie-manage">Manage</button>
+                <button class="btn btn-primary btn-small" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

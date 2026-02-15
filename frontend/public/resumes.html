@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumes - AlphaView AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Left Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="currentColor"/>
+                        <path d="M16 8L22 20H10L16 8Z" fill="white"/>
+                        <rect x="14" y="22" width="4" height="4" fill="white"/>
+                    </svg>
+                    <span class="logo-text">AlphaView AI</span>
+                </a>
+                <button class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10h14M3 5h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="user-avatar-panel" class="user-panel">
+                <div class="user-avatar">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="20" fill="currentColor" opacity="0.1"/>
+                        <path d="M20 20a5 5 0 100-10 5 5 0 000 10zM12 30a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="user-info">
+                    <p id="user-email-panel" class="user-email">user@example.com</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="download.html" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M7 3v14M3 7h14M3 13h14" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Home
+                </a>
+                <a href="past-interviews.html" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Past interviews
+                </a>
+                <a href="resumes.html" class="nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12 2H6a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V6l-4-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 2v4h4M10 13H8M12 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    CVs / Resumes
+                </a>
+                <button class="nav-item nav-signout">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 17H4a2 2 0 01-2-2V5a2 2 0 012-2h3M13 13l4-4-4-4M17 9H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Sign out
+                </button>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main full-width">
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1 class="page-title">CVs / Resumes</h1>
+                    <p class="page-subtitle">Upload your resume to get personalized AI responses</p>
+                </div>
+                
+                <!-- Upload Area -->
+                <div class="upload-section">
+                    <div class="upload-area">
+                        <input 
+                            type="file" 
+                            id="resume-file-input" 
+                            accept=".pdf,.doc,.docx,.txt" 
+                            style="display: none;"
+                        />
+                        <label for="resume-file-input" class="upload-dropzone">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                                <path d="M24 16v16M16 24h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <p class="upload-text">Click to upload or drag and drop</p>
+                            <p class="upload-help">PDF, DOC, DOCX, or TXT (max 5MB)</p>
+                            <span id="file-name" class="file-name"></span>
+                        </label>
+                        <button id="resume-upload-btn" class="btn btn-primary" disabled>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 2v8M8 10l-3-3M8 10l3-3M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Upload Resume
+                        </button>
+                    </div>
+                    
+                    <div class="upload-progress" id="upload-progress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="progress-text">Uploading... <span id="progress-percent">0%</span></p>
+                    </div>
+                    
+                    <div class="upload-success" id="upload-success" style="display: none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"/>
+                            <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p>Resume uploaded successfully!</p>
+                    </div>
+                </div>
+                
+                <!-- Resumes List -->
+                <div class="resumes-section">
+                    <h2 class="section-heading">Your Resumes</h2>
+                    <div id="resumes-list" class="resumes-grid">
+                        <div class="empty-state-card">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M28 8H12a4 4 0 00-4 4v24a4 4 0 004 4h24a4 4 0 004-4V20L28 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M28 8v12h12M24 26h-8M28 18h-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <p>No resumes yet</p>
+                            <p class="empty-state-help">Upload your first resume to get started</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
