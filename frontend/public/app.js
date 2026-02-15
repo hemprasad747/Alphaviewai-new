@@ -7,7 +7,9 @@
     const state = {
         isAuthenticated: false,
         user: null,
-        sidebarOpen: false
+        sidebarOpen: false,
+        resumes: [],
+        interviews: []
     };
     
     // Initialize app
@@ -22,7 +24,48 @@
         setupUpload();
         setupPlatformSelector();
         setupKeyboardNavigation();
+        setupTestimonialsMarquee();
+        setupSectionAnimations();
         checkAuthState();
+        loadResumes();
+        loadInterviews();
+    }
+    
+    // Setup testimonials marquee with duplication for seamless loop
+    function setupTestimonialsMarquee() {
+        const track = document.querySelector('.testimonials-track');
+        if (!track) return;
+        
+        // Clone testimonial cards for seamless infinite scroll
+        const cards = track.querySelectorAll('.testimonial-card-social');
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            track.appendChild(clone);
+        });
+    }
+    
+    // Setup section entrance animations
+    function setupSectionAnimations() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe section elements
+        document.querySelectorAll('.feature-card, .step-card, .platform-verify-card, .pricing-card').forEach(el => {
+            el.classList.add('animate-ready');
+            observer.observe(el);
+        });
     }
     
     // Header scroll effect
