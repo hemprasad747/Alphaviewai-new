@@ -439,21 +439,276 @@
         const emptyState = resumesList.querySelector('.empty-state-card');
         if (emptyState) emptyState.remove();
         
-        // Create resume card
+        // Generate unique ID
+        const id = 'resume_' + Date.now();
+        
+        // Create resume card with modern design
         const card = document.createElement('div');
-        card.className = 'resume-card';
+        card.className = 'resume-card-item';
+        card.dataset.id = id;
         card.innerHTML = `
-            <div class="resume-info">
-                <h3>${fileName}</h3>
-                <p>Uploaded just now</p>
+            <div class="resume-card-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M20 4H8a3 3 0 00-3 3v18a3 3 0 003 3h16a3 3 0 003-3V11l-7-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 4v7h7M17 17H10M17 21H10M12 13h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
             </div>
-            <div class="resume-actions">
-                <button class="btn btn-outline btn-small">Download</button>
-                <button class="btn btn-danger btn-small">Delete</button>
+            <div class="resume-card-content">
+                <h3 class="resume-card-title">${fileName}</h3>
+                <p class="resume-card-meta">Uploaded just now</p>
+            </div>
+            <div class="resume-card-actions">
+                <button class="btn btn-ghost btn-small resume-view-btn" data-testid="view-resume-${id}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 3C3 3 1 8 1 8s2 5 7 5 7-5 7-5-2-5-7-5z" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    View
+                </button>
+                <button class="btn btn-ghost btn-small resume-download-btn" data-testid="download-resume-${id}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2v8M8 10l-3-3M8 10l3-3M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="btn btn-danger btn-small resume-delete-btn" data-testid="delete-resume-${id}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 4h12M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1M12 4v9a1 1 0 01-1 1H5a1 1 0 01-1-1V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
         `;
         
+        // Add event listeners
+        card.querySelector('.resume-delete-btn').addEventListener('click', () => {
+            deleteResume(id, fileName);
+        });
+        
+        card.querySelector('.resume-download-btn').addEventListener('click', () => {
+            showNotification(`Downloading ${fileName}...`, 'success');
+        });
+        
+        card.querySelector('.resume-view-btn').addEventListener('click', () => {
+            showNotification(`Opening ${fileName}...`, 'info');
+        });
+        
         resumesList.appendChild(card);
+        
+        // Save to state
+        state.resumes.push({ id, fileName, uploadedAt: new Date() });
+        saveResumes();
+    }
+    
+    // Delete resume with confirmation
+    function deleteResume(id, fileName) {
+        if (confirm(`Are you sure you want to delete "${fileName}"? This action cannot be undone.`)) {
+            const card = document.querySelector(`.resume-card-item[data-id="${id}"]`);
+            if (card) {
+                card.classList.add('deleting');
+                setTimeout(() => {
+                    card.remove();
+                    state.resumes = state.resumes.filter(r => r.id !== id);
+                    saveResumes();
+                    showNotification(`"${fileName}" has been deleted.`, 'success');
+                    
+                    // Show empty state if no resumes left
+                    const resumesList = document.getElementById('resumes-list');
+                    if (resumesList && state.resumes.length === 0) {
+                        resumesList.innerHTML = `
+                            <div class="empty-state-card">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <path d="M28 8H12a4 4 0 00-4 4v24a4 4 0 004 4h24a4 4 0 004-4V20L28 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M28 8v12h12M24 26h-8M28 18h-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <p>No resumes yet</p>
+                                <p class="empty-state-help">Upload your first resume to get started</p>
+                            </div>
+                        `;
+                    }
+                }, 300);
+            }
+        }
+    }
+    
+    // Save resumes to localStorage
+    function saveResumes() {
+        localStorage.setItem('alphaview_resumes', JSON.stringify(state.resumes));
+    }
+    
+    // Load resumes from localStorage
+    function loadResumes() {
+        const saved = localStorage.getItem('alphaview_resumes');
+        if (saved) {
+            state.resumes = JSON.parse(saved);
+            const resumesList = document.getElementById('resumes-list');
+            if (resumesList && state.resumes.length > 0) {
+                resumesList.innerHTML = '';
+                state.resumes.forEach(resume => {
+                    addResumeToListFromStorage(resume);
+                });
+            }
+        }
+    }
+    
+    // Add resume from storage (helper function)
+    function addResumeToListFromStorage(resume) {
+        const resumesList = document.getElementById('resumes-list');
+        if (!resumesList) return;
+        
+        const emptyState = resumesList.querySelector('.empty-state-card');
+        if (emptyState) emptyState.remove();
+        
+        const card = document.createElement('div');
+        card.className = 'resume-card-item';
+        card.dataset.id = resume.id;
+        
+        const uploadDate = new Date(resume.uploadedAt);
+        const timeAgo = getTimeAgo(uploadDate);
+        
+        card.innerHTML = `
+            <div class="resume-card-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M20 4H8a3 3 0 00-3 3v18a3 3 0 003 3h16a3 3 0 003-3V11l-7-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 4v7h7M17 17H10M17 21H10M12 13h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="resume-card-content">
+                <h3 class="resume-card-title">${resume.fileName}</h3>
+                <p class="resume-card-meta">Uploaded ${timeAgo}</p>
+            </div>
+            <div class="resume-card-actions">
+                <button class="btn btn-ghost btn-small resume-view-btn" data-testid="view-resume-${resume.id}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 3C3 3 1 8 1 8s2 5 7 5 7-5 7-5-2-5-7-5z" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    View
+                </button>
+                <button class="btn btn-ghost btn-small resume-download-btn" data-testid="download-resume-${resume.id}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 2v8M8 10l-3-3M8 10l3-3M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="btn btn-danger btn-small resume-delete-btn" data-testid="delete-resume-${resume.id}">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 4h12M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1M12 4v9a1 1 0 01-1 1H5a1 1 0 01-1-1V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        `;
+        
+        card.querySelector('.resume-delete-btn').addEventListener('click', () => {
+            deleteResume(resume.id, resume.fileName);
+        });
+        
+        card.querySelector('.resume-download-btn').addEventListener('click', () => {
+            showNotification(`Downloading ${resume.fileName}...`, 'success');
+        });
+        
+        card.querySelector('.resume-view-btn').addEventListener('click', () => {
+            showNotification(`Opening ${resume.fileName}...`, 'info');
+        });
+        
+        resumesList.appendChild(card);
+    }
+    
+    // Interview management functions
+    function loadInterviews() {
+        const saved = localStorage.getItem('alphaview_interviews');
+        if (saved) {
+            state.interviews = JSON.parse(saved);
+            renderInterviews();
+        }
+    }
+    
+    function renderInterviews() {
+        const tbody = document.getElementById('past-interviews-tbody');
+        if (!tbody) return;
+        
+        if (state.interviews.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="6" class="empty-state">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                            <path d="M24 16v12M24 32h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <p>No interviews yet</p>
+                        <p class="empty-state-help">Your past interview sessions will appear here</p>
+                    </td>
+                </tr>
+            `;
+            return;
+        }
+        
+        tbody.innerHTML = state.interviews.map(interview => `
+            <tr data-interview-id="${interview.id}" data-testid="interview-row-${interview.id}">
+                <td><strong>${interview.title}</strong></td>
+                <td>${interview.description || '-'}</td>
+                <td>${interview.duration || '-'}</td>
+                <td>${interview.aiUsage || '0 min'}</td>
+                <td>${getTimeAgo(new Date(interview.createdAt))}</td>
+                <td>
+                    <div class="table-actions">
+                        <button class="btn btn-ghost btn-small interview-view-btn" data-id="${interview.id}" data-testid="view-interview-${interview.id}">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 3C3 3 1 8 1 8s2 5 7 5 7-5 7-5-2-5-7-5z" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            View
+                        </button>
+                        <button class="btn btn-danger btn-small interview-delete-btn" data-id="${interview.id}" data-testid="delete-interview-${interview.id}">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M2 4h12M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1M12 4v9a1 1 0 01-1 1H5a1 1 0 01-1-1V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+        
+        // Add event listeners
+        tbody.querySelectorAll('.interview-view-btn').forEach(btn => {
+            btn.addEventListener('click', () => viewInterview(btn.dataset.id));
+        });
+        
+        tbody.querySelectorAll('.interview-delete-btn').forEach(btn => {
+            btn.addEventListener('click', () => deleteInterview(btn.dataset.id));
+        });
+    }
+    
+    function viewInterview(id) {
+        const interview = state.interviews.find(i => i.id === id);
+        if (!interview) return;
+        
+        const modal = document.getElementById('transcript-modal');
+        if (modal) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function deleteInterview(id) {
+        const interview = state.interviews.find(i => i.id === id);
+        if (!interview) return;
+        
+        if (confirm(`Are you sure you want to delete "${interview.title}"? This action cannot be undone.`)) {
+            state.interviews = state.interviews.filter(i => i.id !== id);
+            localStorage.setItem('alphaview_interviews', JSON.stringify(state.interviews));
+            renderInterviews();
+            showNotification(`"${interview.title}" has been deleted.`, 'success');
+        }
+    }
+    
+    // Time ago helper
+    function getTimeAgo(date) {
+        const seconds = Math.floor((new Date() - date) / 1000);
+        
+        if (seconds < 60) return 'just now';
+        if (seconds < 3600) return Math.floor(seconds / 60) + ' min ago';
+        if (seconds < 86400) return Math.floor(seconds / 3600) + ' hours ago';
+        if (seconds < 604800) return Math.floor(seconds / 86400) + ' days ago';
+        
+        return date.toLocaleDateString();
     }
     
     // Platform selector
