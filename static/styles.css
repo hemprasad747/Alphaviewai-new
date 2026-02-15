@@ -889,6 +889,11 @@ section {
     color: var(--color-text-secondary);
 }
 
+.quick-action-buttons {
+    display: flex;
+    gap: var(--spacing-base);
+}
+
 /* Status Cards */
 .status-cards {
     display: grid;
