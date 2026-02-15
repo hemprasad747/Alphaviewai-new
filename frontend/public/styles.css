@@ -3037,11 +3037,299 @@ section {
         grid-template-columns: 1fr;
     }
     
-    .testimonials-scroll-container {
-        animation: scroll-testimonials 40s linear infinite;
+    .testimonials-track {
+        animation: marquee-scroll 30s linear infinite;
     }
     
     .testimonial-card-social {
         width: 300px;
+        min-width: 300px;
+        max-width: 300px;
+    }
+}
+
+/* ============================= */
+/* Resume Card Styles */
+/* ============================= */
+.resume-card-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: white;
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-card-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, #059669 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform var(--transition-base);
+}
+
+.resume-card-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+    transform: translateY(-2px);
+}
+
+.resume-card-item:hover::before {
+    transform: scaleY(1);
+}
+
+.resume-card-item.deleting {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.resume-card-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(16, 185, 129, 0.05) 100%);
+    color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.resume-card-item:hover .resume-card-icon {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #059669 100%);
+    color: white;
+    transform: scale(1.05);
+}
+
+.resume-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.resume-card-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.resume-card-meta {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+.resume-card-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+/* Table Actions */
+.table-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    justify-content: flex-end;
+}
+
+/* ============================= */
+/* Enhanced Entrance Animations */
+/* ============================= */
+.animate-ready {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animations for grid items */
+.animate-in:nth-child(1) { transition-delay: 0.05s; }
+.animate-in:nth-child(2) { transition-delay: 0.1s; }
+.animate-in:nth-child(3) { transition-delay: 0.15s; }
+.animate-in:nth-child(4) { transition-delay: 0.2s; }
+.animate-in:nth-child(5) { transition-delay: 0.25s; }
+.animate-in:nth-child(6) { transition-delay: 0.3s; }
+
+/* ============================= */
+/* Enhanced Hero Section */
+/* ============================= */
+.hero-badge {
+    animation: fadeInDown 0.6s ease-out 0.2s both;
+}
+
+.hero-title {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-buttons {
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.hero-trust-badges {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hero-features {
+    animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================= */
+/* Enhanced Button Hover Effects */
+/* ============================= */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* ============================= */
+/* Enhanced Card Hover Effects */
+/* ============================= */
+.feature-card {
+    background: linear-gradient(135deg, white 0%, #fafafa 100%);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.platform-verify-card {
+    background: linear-gradient(135deg, white 0%, #fafafa 100%);
+}
+
+/* ============================= */
+/* Smooth Scrollbar */
+/* ============================= */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-surface);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-primary) 0%, #059669 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #059669 0%, #047857 100%);
+}
+
+/* ============================= */
+/* Glass Morphism Effects */
+/* ============================= */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ============================= */
+/* Notification Toast */
+/* ============================= */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+/* ============================= */
+/* Resumes Grid Updated */
+/* ============================= */
+.resumes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-base);
+}
+
+/* ============================= */
+/* Mobile Responsive Updates */
+/* ============================= */
+@media (max-width: 640px) {
+    .resume-card-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .resume-card-content {
+        width: 100%;
+    }
+    
+    .resume-card-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .table-actions {
+        flex-direction: column;
+        gap: var(--spacing-xs);
     }
 }
