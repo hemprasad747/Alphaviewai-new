@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaView AI - Your Real-Time AI Interview Assistant</title>
+    <meta name="description" content="Practice interviews, get AI-crafted answers, and analyze screens — live or on demand.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo" aria-label="AlphaView AI">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="currentColor"/>
+                        <path d="M16 8L22 20H10L16 8Z" fill="white"/>
+                        <rect x="14" y="22" width="4" height="4" fill="white"/>
+                    </svg>
+                    <span class="logo-text">AlphaView AI</span>
+                </a>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <nav class="main-nav">
+                    <a href="#features">Features</a>
+                    <a href="#platforms">Platforms</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="download.html">Download</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button id="btn-signin" class="btn btn-secondary">Sign in with Google</button>
+                    <div id="download-area" class="download-area" style="display: none;">
+                        <button id="btn-download" class="btn btn-primary">Download for Windows</button>
+                        <button id="btn-signout" class="btn btn-ghost">Sign out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect width="16" height="16" rx="3" fill="currentColor"/>
+                    </svg>
+                    Desktop App
+                </div>
+                
+                <h1 class="hero-title">Your Real‑Time AI Interview Assistant</h1>
+                
+                <p class="hero-subtitle">
+                    Practice interviews, get AI-crafted answers, and analyze screens — live or on demand. 
+                    Real-time transcription, contextual answers, and screen analysis to help you ace every interview.
+                </p>
+                
+                <div id="hero-cta" class="cta-buttons">
+                    <button id="btn-signin-2" class="btn btn-primary btn-large">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M19.6 10.227c0-.709-.064-1.39-.182-2.045H10v3.868h5.382a4.6 4.6 0 01-1.996 3.018v2.51h3.232c1.891-1.742 2.982-4.305 2.982-7.35z" fill="#4285F4"/>
+                            <path d="M10 20c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.04.955-3.386.955-2.605 0-4.81-1.76-5.595-4.123H1.064v2.59A9.996 9.996 0 0010 20z" fill="#34A853"/>
+                            <path d="M4.405 11.9c-.2-.6-.314-1.24-.314-1.9 0-.66.114-1.3.314-1.9V5.51H1.064A9.996 9.996 0 000 10c0 1.614.386 3.14 1.064 4.49l3.34-2.59z" fill="#FBBC05"/>
+                            <path d="M10 3.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C14.959.99 12.695 0 10 0 6.09 0 2.71 2.24 1.064 5.51l3.34 2.59C5.19 5.736 7.395 3.977 10 3.977z" fill="#EA4335"/>
+                        </svg>
+                        Sign in with Google to download
+                    </button>
+                    
+                    <div id="download-area-2" class="download-area" style="display: none;">
+                        <button id="btn-download-2" class="btn btn-primary btn-large">Download for Windows</button>
+                        <button id="btn-signout-2" class="btn btn-outline">Sign out</button>
+                    </div>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="hero-feature-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M16.667 17.5v-1.667a3.333 3.333 0 00-3.334-3.333H6.667a3.333 3.333 0 00-3.334 3.333V17.5M10 9.167A3.333 3.333 0 1010 2.5a3.333 3.333 0 000 6.667z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Live transcript of interviewer and candidate speech
+                    </div>
+                    <div class="hero-feature-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 18.333a8.333 8.333 0 100-16.666 8.333 8.333 0 000 16.666zM10 6.667V10l2.5 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Ask AI for on-the-spot answers and code examples
+                    </div>
+                    <div class="hero-feature-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="2.5" y="2.5" width="15" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2.5 7.5h15M7.5 2.5v15" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Analyze screens and get concise guidance
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms" class="platforms-section">
+        <div class="container">
+            <h2 class="section-title">Works with your favorite platforms</h2>
+            <div class="platforms-grid">
+                <div class="platform-badge">Zoom</div>
+                <div class="platform-badge">Google Meet</div>
+                <div class="platform-badge">Microsoft Teams</div>
+                <div class="platform-badge">Webex</div>
+                <div class="platform-badge">Amazon Chime</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Everything you need to ace your interview</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Live Interview Assistant</h3>
+                    <p class="feature-description">Get instant first‑person answers during practice sessions — typed or from what you say. AI responds in real-time to keep you confident.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-Source Context</h3>
+                    <p class="feature-description">The AI uses interviewer audio, your mic, and typed text so answers stay in context. No more off-topic responses.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 9h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Screen & Code Analysis</h3>
+                    <p class="feature-description">Capture screenshots and let AI analyze code, tasks, and slides. Get concise guidance on what you're looking at.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Keep and Review History</h3>
+                    <p class="feature-description">Store Q&A pairs and playback AI answers anytime. Review past sessions to improve your performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 20a8 8 0 100-16 8 8 0 000 16zM12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Customizable AI Models</h3>
+                    <p class="feature-description">Choose your preferred AI model and language. Tailor responses to match your interview style and requirements.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Privacy-First Design</h3>
+                    <p class="feature-description">Your data stays yours. All processing happens securely, and you control what gets stored or shared.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" class="privacy-section">
+        <div class="container">
+            <div class="privacy-content">
+                <div class="privacy-text">
+                    <h2 class="section-title">Your privacy is our priority</h2>
+                    <ul class="privacy-checklist">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            End-to-end encryption for all sessions
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            No data sold to third parties
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            You control what gets saved
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                                <path d="M6 10l2.5 2.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            GDPR and CCPA compliant
+                        </li>
+                    </ul>
+                </div>
+                <div class="privacy-visual">
+                    <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
+                        <circle cx="150" cy="150" r="120" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                        <circle cx="150" cy="150" r="90" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                        <circle cx="150" cy="150" r="60" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                        <path d="M150 90v-30M150 240v30M90 150H60M240 150h30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="120" y="120" width="60" height="70" rx="4" fill="currentColor" opacity="0.8"/>
+                        <path d="M150 105a15 15 0 0115 15v5h-30v-5a15 15 0 0115-15z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="150" cy="155" r="8" fill="white"/>
+                        <rect x="147" y="160" width="6" height="15" rx="3" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2 class="section-title">How it works</h2>
+            <p class="section-subtitle">Get started in three simple steps</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Start a session</h3>
+                    <p class="step-description">Choose your preferred language and AI model. Set up your interview environment in seconds.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Speak or type your question</h3>
+                    <p class="step-description">Ask anything during your practice session. The AI listens to both you and the interviewer.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Get instant answers</h3>
+                    <p class="step-description">Click Ask AI to receive a streamed, candidate-style answer. The AI uses the last 7 Q&A pairs for context.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M16 8L22 20H10L16 8Z" fill="white"/>
+                            <rect x="14" y="22" width="4" height="4" fill="white"/>
+                        </svg>
+                        <span class="logo-text">AlphaView AI</span>
+                    </div>
+                    <p class="footer-tagline">Your Real‑Time AI Interview Assistant</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Support</a>
+                    <a href="download.html">Download the app</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 AlphaView AI. All rights reserved.</p>
+                <p class="footer-help">Need help? Visit our <a href="#">Help Center</a> or contact <a href="mailto:support@alphaviewai.com">support@alphaviewai.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="container">
+            <p>We use cookies to improve your experience. <a href="#">Learn more</a></p>
+            <div class="cookie-actions">
+                <button class="btn btn-ghost btn-small" id="cookie-manage">Manage</button>
+                <button class="btn btn-primary btn-small" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
