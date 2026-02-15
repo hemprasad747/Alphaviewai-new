@@ -125,6 +125,6 @@ Build a modern, beautiful, accessible, mobile-first **static front-end** for the
 - LocalStorage used for persisting resume and interview data
 
 ## URLs
-- Preview: https://interview-assistant-3.preview.emergentagent.com
-- Resumes: https://interview-assistant-3.preview.emergentagent.com/resumes.html
-- Past Interviews: https://interview-assistant-3.preview.emergentagent.com/past-interviews.html
+- Preview: https://slick-dl.preview.emergentagent.com
+- Resumes: https://slick-dl.preview.emergentagent.com/resumes.html
+- Past Interviews: https://slick-dl.preview.emergentagent.com/past-interviews.html
