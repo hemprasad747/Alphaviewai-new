@@ -15,11 +15,7 @@
         <aside class="dashboard-sidebar">
             <div class="sidebar-header">
                 <a href="/" class="logo">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <rect width="32" height="32" rx="8" fill="currentColor"/>
-                        <path d="M16 8L22 20H10L16 8Z" fill="white"/>
-                        <rect x="14" y="22" width="4" height="4" fill="white"/>
-                    </svg>
+                    <img src="https://customer-assets.emergentagent.com/job_alphaview-practice/artifacts/zvf8ets7_logo.png" alt="AlphaView AI" width="32" height="32" style="border-radius: 8px;">
                     <span class="logo-text">AlphaView AI</span>
                 </a>
                 <button class="sidebar-toggle" aria-label="Toggle sidebar">
@@ -42,28 +38,28 @@
             </div>
             
             <nav class="sidebar-nav">
-                <a href="download.html" class="nav-item">
+                <a href="download.html" class="nav-item" data-testid="nav-home">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
                         <path d="M7 3v14M3 7h14M3 13h14" stroke="currentColor" stroke-width="2"/>
                     </svg>
                     Home
                 </a>
-                <a href="past-interviews.html" class="nav-item active">
+                <a href="past-interviews.html" class="nav-item active" data-testid="nav-past-interviews">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/>
                         <path d="M10 6v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                     Past interviews
                 </a>
-                <a href="resumes.html" class="nav-item">
+                <a href="resumes.html" class="nav-item" data-testid="nav-resumes">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M12 2H6a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V6l-4-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M12 2v4h4M10 13H8M12 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                     CVs / Resumes
                 </a>
-                <button class="nav-item nav-signout">
+                <button class="nav-item nav-signout" data-testid="nav-signout">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M7 17H4a2 2 0 01-2-2V5a2 2 0 012-2h3M13 13l4-4-4-4M17 9H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -76,24 +72,24 @@
         <main class="dashboard-main full-width">
             <div class="dashboard-content">
                 <div class="page-header">
-                    <h1 class="page-title">Past Interviews</h1>
+                    <h1 class="page-title" data-testid="past-interviews-title">Past Interviews</h1>
                     <p class="page-subtitle">Review your interview history and transcripts</p>
                 </div>
                 
                 <!-- Interviews Table -->
-                <div class="table-container">
+                <div class="table-container" data-testid="interviews-table-container">
                     <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>Ends In</th>
+                                <th>Duration</th>
                                 <th>AI Usage</th>
                                 <th>Created At</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="past-interviews-tbody">
+                        <tbody id="past-interviews-tbody" data-testid="past-interviews-tbody">
                             <tr>
                                 <td colspan="6" class="empty-state">
                                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -112,12 +108,12 @@
     </div>
 
     <!-- Transcript Modal -->
-    <div id="transcript-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="transcript-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" data-testid="transcript-modal">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-title" class="modal-title">Interview Transcript</h2>
-                <button class="modal-close" aria-label="Close modal">
+                <button class="modal-close" aria-label="Close modal" data-testid="close-transcript-modal">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
@@ -126,13 +122,13 @@
             
             <div class="modal-body">
                 <div class="tabs">
-                    <button class="tab-btn active" data-tab="transcript">
+                    <button class="tab-btn active" data-tab="transcript" data-testid="tab-transcript">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M5 3h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2zM7 7h6M7 11h6M7 15h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                         Transcript
                     </button>
-                    <button class="tab-btn" data-tab="ask-ai">
+                    <button class="tab-btn" data-tab="ask-ai" data-testid="tab-ask-ai">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
                             <path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -143,7 +139,7 @@
                 
                 <div id="transcript-tab" class="tab-content active">
                     <div class="transcript-actions">
-                        <button id="transcript-download-btn" class="btn btn-outline btn-small">
+                        <button id="transcript-download-btn" class="btn btn-outline btn-small" data-testid="download-transcript-btn">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M8 10l-3-3h2V3h2v4h2l-3 3zM2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
@@ -158,9 +154,9 @@
                 <div id="ask-ai-tab" class="tab-content">
                     <div class="ask-ai-quick-actions">
                         <p class="quick-actions-label">Quick questions:</p>
-                        <button class="quick-action-btn">Summarize this interview</button>
-                        <button class="quick-action-btn">What were my strengths?</button>
-                        <button class="quick-action-btn">Areas to improve</button>
+                        <button class="quick-action-btn" data-testid="quick-action-summarize">Summarize this interview</button>
+                        <button class="quick-action-btn" data-testid="quick-action-strengths">What were my strengths?</button>
+                        <button class="quick-action-btn" data-testid="quick-action-improve">Areas to improve</button>
                     </div>
                     
                     <div class="ask-ai-custom">
@@ -170,8 +166,9 @@
                             class="form-textarea" 
                             rows="3" 
                             placeholder="Ask anything about this interview..."
+                            data-testid="custom-prompt-input"
                         ></textarea>
-                        <button id="ask-ai-submit-btn" class="btn btn-primary">
+                        <button id="ask-ai-submit-btn" class="btn btn-primary" data-testid="ask-ai-submit-btn">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M14 2L7 9M14 2l-4 12-3-7-7-3 14-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -202,7 +199,7 @@
     </div>
 
     <!-- Delete Confirmation Dialog -->
-    <div id="delete-confirm-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-dialog-title">
+    <div id="delete-confirm-dialog" class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-dialog-title" data-testid="delete-confirm-dialog">
         <div class="modal-backdrop"></div>
         <div class="modal-content modal-small">
             <div class="modal-header">
@@ -216,8 +213,8 @@
             <div class="modal-body">
                 <p>Are you sure you want to delete this interview? This action cannot be undone.</p>
                 <div class="dialog-actions">
-                    <button class="btn btn-ghost">Cancel</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-ghost" data-testid="cancel-delete-btn">Cancel</button>
+                    <button class="btn btn-danger" data-testid="confirm-delete-btn">Delete</button>
                 </div>
             </div>
         </div>
