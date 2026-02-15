@@ -517,4 +517,101 @@
             });
         });
     }
+    
+    // Expose video modal functions to global scope
+    window.openVideoModal = openVideoModal;
+    window.closeVideoModal = closeVideoModal;
+    
+    // Platform names mapping
+    const platformNames = {
+        'zoom': 'Zoom',
+        'teams': 'Microsoft Teams',
+        'meet': 'Google Meet',
+        'webex': 'Webex',
+        'chime': 'Amazon Chime',
+        'coderpad': 'CoderPad.io',
+        'hackerrank': 'HackerRank',
+        'discord': 'Discord',
+        'lark': 'Lark/Feishu',
+        'slack': 'Slack Huddles'
+    };
+    
+    // Video URLs storage - will be populated when videos are uploaded
+    const platformVideos = {
+        'zoom': null,
+        'teams': null,
+        'meet': null,
+        'webex': null,
+        'chime': null,
+        'coderpad': null,
+        'hackerrank': null,
+        'discord': null,
+        'lark': null,
+        'slack': null
+    };
+    
+    function openVideoModal(platform) {
+        const modal = document.getElementById('videoModal');
+        const title = document.getElementById('videoModalTitle');
+        const subtitle = document.getElementById('videoModalSubtitle');
+        const videoContainer = document.getElementById('videoContainer');
+        
+        if (!modal) return;
+        
+        // Update modal content
+        const platformName = platformNames[platform] || platform;
+        title.textContent = `${platformName} Demo`;
+        subtitle.textContent = `Watch AlphaView AI in action on ${platformName}`;
+        
+        // Check if video exists for this platform
+        const videoUrl = platformVideos[platform];
+        
+        if (videoUrl) {
+            videoContainer.innerHTML = `
+                <video controls autoplay>
+                    <source src="${videoUrl}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+        } else {
+            videoContainer.innerHTML = `
+                <div class="video-placeholder">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+                        <path d="M32 24v32l24-16-24-16z" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    <p>Video demo coming soon</p>
+                    <span>Upload your demo video to showcase AlphaView AI on ${platformName}</span>
+                </div>
+            `;
+        }
+        
+        // Show modal
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const videoContainer = document.getElementById('videoContainer');
+        
+        if (!modal) return;
+        
+        // Stop any playing video
+        const video = videoContainer.querySelector('video');
+        if (video) {
+            video.pause();
+        }
+        
+        // Hide modal
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    
+    // Close video modal on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeVideoModal();
+        }
+    });
 })();
