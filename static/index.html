@@ -156,16 +156,22 @@
     </section>
 
     <!-- Supported Platforms Section -->
-    <section class="supported-platforms-section">
+    <section class="supported-platforms-section" id="platforms">
         <div class="container">
             <div class="section-header-center">
                 <span class="section-label">Verified</span>
                 <h2 class="section-title">Privacy Demo Videos</h2>
-                <p class="section-subtitle">Tested and verified as undetectable on major platforms</p>
+                <p class="section-subtitle">Click to watch proof that AlphaView AI is undetectable on each platform</p>
             </div>
             
             <div class="platforms-verification-grid">
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="zoom" onclick="openVideoModal('zoom')" data-testid="platform-zoom">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon zoom-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#2D8CFF"/>
@@ -181,10 +187,17 @@
                             </svg>
                             Undetectable, checked 2h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="teams" onclick="openVideoModal('teams')" data-testid="platform-teams">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon teams-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#5558AF"/>
@@ -200,10 +213,17 @@
                             </svg>
                             Undetectable, checked 3h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="meet" onclick="openVideoModal('meet')" data-testid="platform-meet">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon meet-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#00897B"/>
@@ -220,10 +240,17 @@
                             </svg>
                             Undetectable, checked 1h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="webex" onclick="openVideoModal('webex')" data-testid="platform-webex">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon webex-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#00BCF2"/>
@@ -239,10 +266,17 @@
                             </svg>
                             Undetectable, checked 4h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="chime" onclick="openVideoModal('chime')" data-testid="platform-chime">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon chime-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#FF9900"/>
@@ -258,10 +292,17 @@
                             </svg>
                             Undetectable, checked 2h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="coderpad" onclick="openVideoModal('coderpad')" data-testid="platform-coderpad">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon coderpad-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#E94E32"/>
@@ -277,10 +318,17 @@
                             </svg>
                             Undetectable, checked 5h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="hackerrank" onclick="openVideoModal('hackerrank')" data-testid="platform-hackerrank">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon hackerrank-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#1BA94C"/>
@@ -296,10 +344,43 @@
                             </svg>
                             Undetectable, checked 3h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
                 
-                <div class="platform-verify-card">
+                <div class="platform-verify-card" data-platform="discord" onclick="openVideoModal('discord')" data-testid="platform-discord">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon discord-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#5865F2"/>
+                            <path d="M16 18c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm6 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Discord</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 1h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="lark" onclick="openVideoModal('lark')" data-testid="platform-lark">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
                     <div class="platform-verify-icon lark-icon">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <rect width="40" height="40" rx="8" fill="#00D6B9"/>
@@ -316,11 +397,65 @@
                             </svg>
                             Undetectable, checked 6h ago
                         </div>
+                        <span class="watch-demo-label">Watch Demo</span>
+                    </div>
+                </div>
+                
+                <div class="platform-verify-card" data-platform="slack" onclick="openVideoModal('slack')" data-testid="platform-slack">
+                    <div class="platform-play-overlay">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="rgba(16, 185, 129, 0.9)"/>
+                            <path d="M20 16v16l12-8-12-8z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-icon slack-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#4A154B"/>
+                            <rect x="15" y="12" width="4" height="10" rx="2" fill="#E01E5A"/>
+                            <rect x="21" y="18" width="4" height="10" rx="2" fill="#36C5F0"/>
+                        </svg>
+                    </div>
+                    <div class="platform-verify-info">
+                        <h4>Slack Huddles</h4>
+                        <div class="verify-status">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="7" fill="#10b981"/>
+                                <path d="M5 8l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Undetectable, checked 2h ago
+                        </div>
+                        <span class="watch-demo-label">Watch Demo</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal" data-testid="video-modal">
+        <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal()" data-testid="video-modal-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="video-modal-header">
+                <h3 id="videoModalTitle">Platform Demo</h3>
+                <p id="videoModalSubtitle">Proof of undetectability</p>
+            </div>
+            <div class="video-container" id="videoContainer">
+                <div class="video-placeholder">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+                        <path d="M32 24v32l24-16-24-16z" fill="currentColor" opacity="0.5"/>
+                    </svg>
+                    <p>Video demo coming soon</p>
+                    <span>Upload your demo video to showcase AlphaView AI on this platform</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonials">
