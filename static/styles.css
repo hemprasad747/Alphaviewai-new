@@ -1017,8 +1017,9 @@ section {
 
 .platform-btn.active {
     border-color: var(--color-primary);
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #059669 100%);
     color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 /* Step Flow */
