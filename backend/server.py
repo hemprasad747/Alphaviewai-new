@@ -90,3 +90,27 @@ logger = logging.getLogger(__name__)
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+# Static file routes for the AlphaView AI website
+@app.get("/")
+async def serve_index():
+    return FileResponse(STATIC_DIR / 'index.html')
+
+@app.get("/index.html")
+async def serve_index_html():
+    return FileResponse(STATIC_DIR / 'index.html')
+
+@app.get("/download.html")
+async def serve_download():
+    return FileResponse(STATIC_DIR / 'download.html')
+
+@app.get("/past-interviews.html")
+async def serve_past_interviews():
+    return FileResponse(STATIC_DIR / 'past-interviews.html')
+
+@app.get("/resumes.html")
+async def serve_resumes():
+    return FileResponse(STATIC_DIR / 'resumes.html')
+
+# Serve static assets (CSS, JS)
+app.mount("/", StaticFiles(directory=str(STATIC_DIR)), name="static")
