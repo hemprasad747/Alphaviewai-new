@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Disabled Tailwind for static site - React app renders null */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+/* Note: Tailwind disabled because static site in /public/ uses its own CSS */
 
 body {
     margin: 0;
