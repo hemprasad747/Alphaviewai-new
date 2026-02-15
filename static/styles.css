@@ -855,6 +855,7 @@ section {
 .dashboard-main {
     padding: var(--spacing-2xl);
     overflow-y: auto;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f9fafb 100%);
 }
 
 .dashboard-main.full-width {
@@ -867,6 +868,14 @@ section {
 
 .welcome-section {
     margin-bottom: var(--spacing-2xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.welcome-text {
+    flex: 1;
 }
 
 .dashboard-greeting {
